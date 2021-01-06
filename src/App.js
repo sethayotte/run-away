@@ -1,11 +1,13 @@
-import './App.css';
+import './sass/App.scss';
+import Landing from './components/Landing';
 
 function App() {
   return (
     <div className="App">
-      <h1>Run Away</h1>
+      <Landing />
     </div>
   );
 }
 
 export default App;
+

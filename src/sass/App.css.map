@@ -1,0 +1,18 @@
+{
+    "version": 3,
+    "mappings": "AGKA,OAAO,CAAC,0IAAI;AAIZ,OAAO,CAAC,uFAAI;AETZ,AAAA,SAAS,CAAC;EACN,KAAK,EAAE,KAAK;EACZ,OAAO,EAAE,IAAI;CAOhB;;AATD,AAII,SAJK,CAIL,GAAG,CAAC;EACA,MAAM,EAAE,IAAI;EACZ,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,IAAI;CAChB",
+    "sources": [
+        "App.scss",
+        "1-Basics/_colors.scss",
+        "1-Basics/_page.scss",
+        "1-Basics/_typefaces.scss",
+        "2-Layout/_footer.scss",
+        "2-Layout/_menu.scss",
+        "3-Modules/_ticketHorizontal.scss",
+        "3-Modules/_ticketVertical.scss",
+        "4-Pages/_booking.scss",
+        "4-Pages/_landing.scss"
+    ],
+    "names": [],
+    "file": "App.css"
+}

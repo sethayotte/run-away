@@ -1,0 +1,19 @@
+//Main Styles - Imported Partials
+
+
+//1-Basics
+@import '1-Basics/colors';
+@import '1-Basics/page';
+@import '1-Basics/typefaces';
+
+//2-Layout
+@import '2-Layout/footer';
+@import '2-Layout/menu';
+
+//3-Modules
+@import '3-Modules/ticketHorizontal';
+@import '3-Modules/ticketVertical';
+
+//4-Pages
+@import '4-Pages/booking';
+@import '4-Pages/landing';
