@@ -1,15 +1,27 @@
-button.buttonMain {
-    background-color: #FF9B25;
+.buttonMain {
+    background-color: color(orange);
     color: white;
-    padding: 15px 55px;
+    padding: 10px 55px;
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 600;
     font-style: italic;
-    font-size: 24pt;
+    font-size: 20pt;
     border-radius: 50px;
     border: none;
 }
 
 .buttonSecondary {
-    
+    background-color: color(grey);
+    color: white;
+    padding: 10px 55px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 20pt;
+    border-radius: 50px;
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
 }

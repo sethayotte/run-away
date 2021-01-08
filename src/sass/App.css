@@ -1,17 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap");
-button.buttonMain {
-  background-color: #FF9B25;
-  color: white;
-  padding: 15px 55px;
-  font-family: 'IBM Plex Mono', monospace;
-  font-weight: 600;
-  font-style: italic;
-  font-size: 24pt;
-  border-radius: 50px;
-  border: none;
-}
-
 h1 {
   font-family: 'Heebo', sans-serif;
   font-weight: 700;
@@ -19,14 +7,45 @@ h1 {
   text-align: center;
 }
 
+.buttonMain {
+  background-color: #FF9B25;
+  color: white;
+  padding: 10px 55px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 20pt;
+  border-radius: 50px;
+  border: none;
+}
+
+.buttonSecondary {
+  background-color: #D8D8D8;
+  color: white;
+  padding: 10px 55px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 20pt;
+  border-radius: 50px;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
 .mainMenu {
   width: 100vw;
+}
+
+.mainMenu .homeLink {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.mainMenu img {
+.mainMenu .homeLink img {
   height: 50px;
   margin: auto;
   padding: 20px;
@@ -34,14 +53,63 @@ h1 {
 
 .ticketH-SVG {
   margin: auto;
-  padding: 50px;
+  padding: 5px 50px;
   max-width: 1000px;
 }
 
 .ticketV-SVG {
   margin: auto;
-  padding: 40px;
+  padding: 10px 40px;
   max-width: 400px;
+}
+
+#booking .renderData {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: -250px;
+  margin-bottom: 200px;
+}
+
+#booking .renderData h3, #booking .renderData h4 {
+  margin: auto;
+  text-align: left;
+}
+
+#booking .renderData h3 {
+  font-family: 'Heebo';
+  color: #FF9B25;
+  font-weight: 700;
+  font-size: 18pt;
+}
+
+#booking .renderData h4 {
+  font-family: 'IBM Plex Mono';
+  color: black;
+  font-weight: 600;
+  font-size: 32pt;
+}
+
+#booking .bookingControls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 30px;
+}
+
+#booking .bookingControls button {
+  margin: 10px;
 }
 
 .landingBody {
