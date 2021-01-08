@@ -10,7 +10,7 @@ const options = {
     url: 'https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/SFO-sky/CDG-sky/anytime',
     params: {inboundpartialdate: 'anytime'},
     headers: {
-      'x-rapidapi-key': '8a9aaa3061msh933907a77fddc62p19fc3fjsn7beb7093a061',
+      'x-rapidapi-key': process.env.REACT_APP_SKYSCANNER_KEY,
       'x-rapidapi-host': 'skyscanner-skyscanner-flight-search-v1.p.rapidapi.com'
     }
   };
