@@ -5,7 +5,7 @@ const options = {
     method: 'GET',
     url: 'https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/us/usd/us/sfo/jfk/anytime/anytime',
     headers: {
-      'x-rapidapi-key': 'dcb1ec75b4mshe35dece3bc5454ep1837eajsnf6a514ee41e9',
+      'x-rapidapi-key': process.env.REACT_APP_SKYSCANNER_KEY,
       'x-rapidapi-host': 'skyscanner-skyscanner-flight-search-v1.p.rapidapi.com'
     }
   };
@@ -23,8 +23,8 @@ const BookingData = () => {
     const [destinationCode, setDestinationCode] = useState(null);
     const [cityName, setCityName] = useState(null);
     const [countryName, setCountryName] = useState(null);
-    const [outboundDate, setOutboundDate] = useState(null);
-    const [inboundDate, setInboundDate] = useState(null);
+    const [outboundDate, setOutboundDate] = useState('0000.00.00');
+    const [inboundDate, setInboundDate] = useState('0000.00.00');
     const [airline, setAirline] = useState(null);
 
     const getFlightData = async () => {
