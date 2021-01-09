@@ -1,0 +1,75 @@
+.ticketData {
+    display: flex;
+
+    .dataContainerL {
+        padding-right: 125px;
+    }
+}
+
+.dataContainerL, .dataContainerR {
+
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+        color: color(white);
+        background-color: color(orange);
+        font-weight: 600;
+        font-size: 16pt;
+        margin-bottom: 0px; 
+        width: 35px;
+        height: 35px;
+        border-radius: 50px;
+        text-align: center;
+        line-height: 165%;
+    }
+
+    h3 {
+        font-family: 'Heebo', sans-serif;
+        color: color(orange);
+        font-weight: 500;
+        font-size: 22pt;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-family: 'IBM Plex Mono', monospace;
+        color: color(black);
+        font-weight: 400;
+        font-size: 14pt;
+    }
+
+    #farePrice {
+        margin-top: -20px;
+        padding-top: 0px;
+        font-weight: 700;
+        font-size: 36pt;
+        font-style: italic;
+
+        #currencyType {
+            font-size: 18pt;
+        }
+    }
+}
+
+.sectionContainer {
+
+    .numHeader {
+        display: flex;
+        align-items: center;
+        height: 30px;
+
+        h2 {
+            margin-right: 20px;
+        }
+
+    }
+
+    .sectionContent {
+
+        p {
+            padding-left: 55px;
+        }
+    }
+}

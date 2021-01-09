@@ -63,7 +63,17 @@ button:hover {
   max-width: 400px;
 }
 
-#booking .renderData {
+.ticketData {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.ticketData .dataContainerL {
+  padding-right: 125px;
+}
+
+.dataContainerL, .dataContainerR {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -71,27 +81,80 @@ button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: -250px;
-  margin-bottom: 200px;
 }
 
-#booking .renderData h3, #booking .renderData h4 {
-  margin: auto;
-  text-align: left;
+.dataContainerL h2, .dataContainerR h2 {
+  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+  color: white;
+  background-color: #FF9B25;
+  font-weight: 600;
+  font-size: 16pt;
+  margin-bottom: 0px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50px;
+  text-align: center;
+  line-height: 165%;
 }
 
-#booking .renderData h3 {
-  font-family: 'Heebo';
+.dataContainerL h3, .dataContainerR h3 {
+  font-family: 'Heebo', sans-serif;
   color: #FF9B25;
+  font-weight: 500;
+  font-size: 22pt;
+  margin-bottom: 10px;
+}
+
+.dataContainerL p, .dataContainerR p {
+  font-family: 'IBM Plex Mono', monospace;
+  color: black;
+  font-weight: 400;
+  font-size: 14pt;
+}
+
+.dataContainerL #farePrice, .dataContainerR #farePrice {
+  margin-top: -20px;
+  padding-top: 0px;
   font-weight: 700;
+  font-size: 36pt;
+  font-style: italic;
+}
+
+.dataContainerL #farePrice #currencyType, .dataContainerR #farePrice #currencyType {
   font-size: 18pt;
 }
 
-#booking .renderData h4 {
-  font-family: 'IBM Plex Mono';
-  color: black;
-  font-weight: 600;
-  font-size: 32pt;
+.sectionContainer .numHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 30px;
+}
+
+.sectionContainer .numHeader h2 {
+  margin-right: 20px;
+}
+
+.sectionContainer .sectionContent p {
+  padding-left: 55px;
+}
+
+#booking .data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: -350px;
+}
+
+#booking .data .dataChild {
+  margin: 0 auto;
+  padding-left: 50px;
 }
 
 #booking .bookingControls {
@@ -105,7 +168,7 @@ button:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 30px;
+  margin-top: 75px;
 }
 
 #booking .bookingControls button {
