@@ -36,7 +36,7 @@ const Booking = () => {
     return (
         <div className="pageContent" id="booking">
             <h1>Pack your bags.</h1>
-            {(window.innerWidth < 1150) ? (
+            {(dimensions.width < 1150) ? (
                 <TicketVertical />
             ) : (
                 <div className="ticketRender">
