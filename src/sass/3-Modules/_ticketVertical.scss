@@ -1,5 +1,13 @@
 .ticketV-SVG {
     margin: auto;
-    padding: 10px 40px;
+    padding: 10px 20px 10px 10px;
     max-width: 400px;
+}
+
+@media only screen and (max-width: 450px) {
+    .ticketV-SVG {
+        margin: auto;
+        padding: 10px 0px 10px 5px;
+        width: 320px;
+    }
 }

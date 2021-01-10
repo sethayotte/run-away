@@ -7,6 +7,12 @@ h1 {
   text-align: center;
 }
 
+@media only screen and (max-width: 650px) {
+  h1 {
+    font-size: 32pt;
+  }
+}
+
 .buttonMain {
   background-color: #FF9B25;
   color: white;
@@ -59,8 +65,16 @@ button:hover {
 
 .ticketV-SVG {
   margin: auto;
-  padding: 10px 40px;
+  padding: 10px 20px 10px 10px;
   max-width: 400px;
+}
+
+@media only screen and (max-width: 450px) {
+  .ticketV-SVG {
+    margin: auto;
+    padding: 10px 0px 10px 5px;
+    width: 320px;
+  }
 }
 
 .ticketData {
@@ -85,7 +99,7 @@ button:hover {
 
 .dataContainerL h2, .dataContainerR h2 {
   font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
-  color: white;
+  color: #EAEAEA;
   background-color: #FF9B25;
   font-weight: 600;
   font-size: 16pt;
@@ -142,6 +156,141 @@ button:hover {
   padding-left: 55px;
 }
 
+@media only screen and (max-width: 1150px) {
+  .ticketData {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .ticketData .dataContainerL {
+    padding-right: 0px;
+  }
+  .dataContainerL, .dataContainerR {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .dataContainerL h2, .dataContainerR h2 {
+    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+    color: #EAEAEA;
+    background-color: #FF9B25;
+    font-weight: 600;
+    font-size: 14pt;
+    margin-bottom: 0px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 185%;
+  }
+  .dataContainerL h3, .dataContainerR h3 {
+    font-family: 'Heebo', sans-serif;
+    color: #FF9B25;
+    font-weight: 500;
+    font-size: 20pt;
+    margin-bottom: 10px;
+  }
+  .dataContainerL p, .dataContainerR p {
+    font-family: 'IBM Plex Mono', monospace;
+    color: black;
+    font-weight: 400;
+    font-size: 12pt;
+  }
+  .dataContainerL #farePrice, .dataContainerR #farePrice {
+    margin-top: -20px;
+    padding-top: 0px;
+    font-weight: 700;
+    font-size: 36pt;
+    font-style: italic;
+  }
+  .dataContainerL #farePrice #currencyType, .dataContainerR #farePrice #currencyType {
+    font-size: 18pt;
+  }
+  .sectionContainer {
+    margin-bottom: 25px;
+  }
+  .sectionContainer .numHeader {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 30px;
+  }
+  .sectionContainer .numHeader h2 {
+    margin-right: 20px;
+  }
+  .sectionContainer .sectionContent p {
+    padding-left: 55px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .dataContainerL h2, .dataContainerR h2 {
+    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+    color: #EAEAEA;
+    background-color: #FF9B25;
+    font-weight: 600;
+    font-size: 12pt;
+    margin-bottom: 0px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 190%;
+  }
+  .dataContainerL h3, .dataContainerR h3 {
+    font-family: 'Heebo', sans-serif;
+    color: #FF9B25;
+    font-weight: 500;
+    font-size: 18pt;
+    margin-bottom: 7px;
+  }
+  .dataContainerL p, .dataContainerR p {
+    font-family: 'IBM Plex Mono', monospace;
+    color: black;
+    font-weight: 400;
+    font-size: 10pt;
+  }
+  .dataContainerL #farePrice, .dataContainerR #farePrice {
+    margin-top: -20px;
+    padding-top: 0px;
+    font-weight: 700;
+    font-size: 36pt;
+    font-style: italic;
+  }
+  .dataContainerL #farePrice #currencyType, .dataContainerR #farePrice #currencyType {
+    font-size: 18pt;
+  }
+  .sectionContainer {
+    margin-bottom: 10px;
+  }
+  .sectionContainer .numHeader {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 30px;
+  }
+  .sectionContainer .numHeader h2 {
+    margin-right: 10px;
+  }
+  .sectionContainer .sectionContent p {
+    padding-left: 40px;
+  }
+}
+
 #booking .data {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -173,6 +322,56 @@ button:hover {
 
 #booking .bookingControls button {
   margin: 10px;
+}
+
+@media only screen and (max-width: 1150px) {
+  #booking .data {
+    margin-top: -850px;
+  }
+  #booking .data .dataChild {
+    padding-left: 0px;
+  }
+  #booking .bookingControls {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 0px;
+  }
+  #booking .bookingControls button {
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  #booking .data {
+    margin-top: -700px;
+  }
+  #booking .data .dataChild {
+    padding-left: 0px;
+  }
+  #booking .bookingControls {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: -30px;
+  }
+  #booking .bookingControls button {
+    margin-bottom: 10px;
+  }
 }
 
 .landingBody {

@@ -1,17 +1,42 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from "axios";
 
 import TicketHorizontal from './TicketHorizontal';
 import TicketVertical from './TicketVertical';
 import BookingData from './BookingData';
 
+function debounce(fn, ms) {
+    let timer
+    return _ => {
+      clearTimeout(timer)
+      timer = setTimeout(_ => {
+        timer = null
+        fn.apply(this, arguments)
+      }, ms)
+    };
+  }
+
 const Booking = () => {
+
+    const [dimensions, setDimensions] = useState({ 
+        height: window.innerHeight,
+        width: window.innerWidth
+      })
+    
+      useEffect(() => {
+        const debouncedHandleResize = debounce(function handleResize() {
+            setDimensions({
+              height: window.innerHeight,
+              width: window.innerWidth
+            })
+          }, 500)
+          window.addEventListener('resize', debouncedHandleResize)
+      });
 
     return (
         <div className="pageContent" id="booking">
             <h1>Pack your bags.</h1>
-            {(window.innerWidth < 850) ? (
+            {(window.innerWidth < 1150) ? (
                 <TicketVertical />
             ) : (
                 <div className="ticketRender">
