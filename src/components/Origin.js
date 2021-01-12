@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Origin = () => {
-  const [origin, setOrigin] = useState(null);
+const Origin = ({origin, setOrigin}) => {
 
-  const handleChange = (event) => {
-    setOrigin(event.target.value.toUpperCase());
-  };
+    const handleChange = (event) => {
+        setOrigin(event.target.value.toUpperCase());
+      };
+  
   return (
     <div className="pageContent" id="landing">
       <section className="landingBody">
@@ -34,6 +34,7 @@ const Origin = () => {
           placeholder="CLT"
           maxLength={3}
         />
+        {console.log(origin)}
         <Link to="/booking">
           <button className="buttonMain">Next</button>
         </Link>

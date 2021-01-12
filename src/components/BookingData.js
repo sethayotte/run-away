@@ -2,24 +2,33 @@ import React, { useState, useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
 import axios from "axios";
 
-const options = {
-  method: "GET",
-  url:
-    "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/us/usd/us/sfo/jfk/anytime/anytime",
-  headers: {
-    "x-rapidapi-key": process.env.REACT_APP_SKYSCANNER_KEY,
-    "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
-  },
-};
+import { Icon } from 'react-icons-kit'
+import {ic_flight_takeoff} from 'react-icons-kit/md/ic_flight_takeoff'
+import {ic_flight_land} from 'react-icons-kit/md/ic_flight_land'
 
-const BookingData = () => {
+
+const BookingData = ({origin}) => {
   const [fare, setFare] = useState(null);
   const [destinationCode, setDestinationCode] = useState(null);
-  const [cityName, setCityName] = useState(null);
-  const [countryName, setCountryName] = useState(null);
+  const [originCode, setOriginCode] = useState(null);
+  const [destinationCityName, setDestinationCityName] = useState(null);
+  const [destinationCountryName, setDestinationCountryName] = useState(null);
+  const [originCityName, setOriginCityName] = useState(null);
+  const [originCountryName, setOriginCountryName] = useState(null);
   const [outboundDate, setOutboundDate] = useState("0000.00.00");
   const [inboundDate, setInboundDate] = useState("0000.00.00");
-  const [airline, setAirline] = useState(null);
+  const [outboundAirline, setOutboundAirline] = useState(null);
+  const [inboundAirline, setInboundAirline] = useState(null);
+
+  const options = {
+    method: "GET",
+    url:
+      "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/us/usd/us/" + "den" + "/" + "clt" + "/anytime/anytime",
+    headers: {
+      "x-rapidapi-key": process.env.REACT_APP_SKYSCANNER_KEY,
+      "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
+    },
+  };
 
   const dateConversion = (date) => {
     let str = date;
@@ -40,13 +49,39 @@ const BookingData = () => {
         const formattedInboundDate = dateConversion(
           Quotes[0].InboundLeg.DepartureDate
         );
+        const outboundAirlineCheck = () => {
+            var i;
+            for (i=0; i < Carriers.length; i++) {
+                if (Carriers[i].CarrierId == Quotes[0].OutboundLeg.CarrierIds[0]) {
+                    return Carriers[i].Name
+                } else {
+                    return null;
+                }
+            }
+        }
+        const inboundAirlineCheck = () => {
+            var i;
+            for (i=0; i < Carriers.length; i++) {
+                if (Carriers[i].CarrierId == Quotes[0].InboundLeg.CarrierIds[0]) {
+                    return Carriers[i].Name
+                } else {
+                    return null;
+                }
+            }
+        }
+        const outAirline = outboundAirlineCheck();
+        const inAirline = inboundAirlineCheck();
 
-        setDestinationCode(Places[0].IataCode);
-        setCityName(Places[0].CityName);
-        setCountryName(Places[0].CountryName);
+        setDestinationCode(Places[1].IataCode);
+        setOriginCode(Places[0].IataCode);
+        setDestinationCityName(Places[1].CityName);
+        setDestinationCountryName(Places[1].CountryName);
+        setOriginCityName(Places[0].CityName);
+        setOriginCountryName(Places[0].CountryName);
         setOutboundDate(formattedOutboundDate);
         setInboundDate(formattedInboundDate);
-        setAirline(Carriers[0].Name);
+        setOutboundAirline(outAirline);
+        setInboundAirline(inAirline);
         setFare(Quotes[0].MinPrice);
       }
     };
@@ -60,11 +95,11 @@ const BookingData = () => {
         <div className="sectionContainer">
           <div className="numHeader">
             <h2>1</h2>
-            <h3>Destination</h3>
+            <h3>Origin</h3>
           </div>
           <div className="sectionContent">
             <p>
-              {`(${destinationCode}) ${cityName}, ${countryName}` || (
+              {`(${originCode}) ${originCityName}, ${originCountryName}` || (
                 <Skeleton />
               )}
             </p>
@@ -73,19 +108,23 @@ const BookingData = () => {
         <div className="sectionContainer">
           <div className="numHeader">
             <h2>2</h2>
-            <h3>Dates</h3>
+            <h3>Destination</h3>
           </div>
           <div className="sectionContent">
-            <p>{`${outboundDate} - ${inboundDate}` || <Skeleton />}</p>
+            <p>
+              {`(${destinationCode}) ${destinationCityName}, ${destinationCountryName}` || (
+                <Skeleton />
+              )}
+            </p>
           </div>
         </div>
         <div className="sectionContainer">
           <div className="numHeader">
             <h2>3</h2>
-            <h3>Airline</h3>
+            <h3>Dates</h3>
           </div>
           <div className="sectionContent">
-            <p>{airline || <Skeleton />}</p>
+            <p>{`${outboundDate} - ${inboundDate}` || <Skeleton />}</p>
           </div>
         </div>
       </div>
@@ -96,8 +135,8 @@ const BookingData = () => {
             <h3>Itinerary</h3>
           </div>
           <div className="sectionContent">
-            <p>{`10:28 -- 21:10` || <Skeleton />}</p>
-            <p>{`07:00 -- 20:49` || <Skeleton />}</p>
+            <p className="itineraryFirstChild"><Icon size={24} icon={ic_flight_takeoff} />{` ${outboundAirline}, direct`}</p>
+            <p className="itinerarySecondChild"><Icon size={24} icon={ic_flight_land} />{` ${inboundAirline}, direct`}</p>
           </div>
         </div>
         <div className="sectionContainer">

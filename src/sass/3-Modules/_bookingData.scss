@@ -2,7 +2,7 @@
     display: flex;
 
     .dataContainerL {
-        padding-right: 125px;
+        padding-right: 50px;
     }
 }
 
@@ -38,6 +38,14 @@
         color: color(black);
         font-weight: 400;
         font-size: 14pt;
+    }
+
+    .itineraryFirstChild {
+        margin-bottom: 5px;
+    }
+
+    .itinerarySecondChild {
+        margin-top: 0px;
     }
 
     #farePrice {

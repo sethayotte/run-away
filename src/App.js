@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import './sass/App.scss';
 import {
   BrowserRouter as Router,
@@ -12,6 +13,9 @@ import Booking from './components/Booking';
 import Confirmation from './components/Confirmation';
 
 function App() {
+
+  const [origin, setOrigin] = useState(null);
+
   return (
     <Router>
     <div className="App">
@@ -23,7 +27,10 @@ function App() {
             <Booking />
           </Route>
           <Route path="/origin">
-            <Origin />
+            <Origin 
+              origin={origin}
+              setOrigin={setOrigin}
+            />
           </Route>
           <Route path="/confirmation">
             <Confirmation />

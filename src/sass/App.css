@@ -84,7 +84,7 @@ button:hover {
 }
 
 .ticketData .dataContainerL {
-  padding-right: 125px;
+  padding-right: 50px;
 }
 
 .dataContainerL, .dataContainerR {
@@ -124,6 +124,14 @@ button:hover {
   color: black;
   font-weight: 400;
   font-size: 14pt;
+}
+
+.dataContainerL .itineraryFirstChild, .dataContainerR .itineraryFirstChild {
+  margin-bottom: 5px;
+}
+
+.dataContainerL .itinerarySecondChild, .dataContainerR .itinerarySecondChild {
+  margin-top: 0px;
 }
 
 .dataContainerL #farePrice, .dataContainerR #farePrice {
@@ -318,6 +326,7 @@ button:hover {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 75px;
+  margin-bottom: 100px;
 }
 
 #booking .bookingControls button {
