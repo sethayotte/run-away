@@ -390,4 +390,25 @@ button:hover {
           justify-content: center;
   height: 70vh;
 }
+
+#originHeader {
+  margin-bottom: 0px;
+}
+
+.inputInstructions {
+  font-size: 14pt;
+  font-family: 'IBM Plex Mono';
+  font-weight: 600;
+  font-style: italic;
+  margin: 0px;
+}
+
+.confirmationIcon {
+  color: #FF9B25;
+  margin-bottom: 10px;
+}
+
+.confirmationHeader {
+  margin: 0px;
+}
 /*# sourceMappingURL=App.css.map */

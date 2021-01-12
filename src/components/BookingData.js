@@ -64,7 +64,9 @@ const BookingData = () => {
           </div>
           <div className="sectionContent">
             <p>
-              {`(${destinationCode}) ${cityName}, ${countryName}` || <Skeleton />}
+              {`(${destinationCode}) ${cityName}, ${countryName}` || (
+                <Skeleton />
+              )}
             </p>
           </div>
         </div>

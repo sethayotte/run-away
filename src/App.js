@@ -7,6 +7,7 @@ import {
 
 import Menu from './components/Menu';
 import Landing from './components/Landing';
+import Origin from './components/Origin';
 import Booking from './components/Booking';
 import Confirmation from './components/Confirmation';
 
@@ -20,6 +21,9 @@ function App() {
     <Switch>
           <Route path="/booking">
             <Booking />
+          </Route>
+          <Route path="/origin">
+            <Origin />
           </Route>
           <Route path="/confirmation">
             <Confirmation />
