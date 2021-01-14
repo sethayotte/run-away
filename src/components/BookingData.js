@@ -22,6 +22,44 @@ const BookingData = (props) => {
 
   const requestOutbound = 'SFO'
 
+  //Random Date Generation
+
+  const tripLengthArray = [4, 7, 10, 14, 18, 21]
+
+  const baseline = new Date().toISOString().slice(0, 10)
+
+  const baselineDay = parseInt(baseline.slice(8, 10))
+  let baselineMonth = parseInt(baseline.slice(5, 7))
+  let baselineYear = parseInt(baseline.slice(0, 4))
+
+  let outboundDay = Math.floor(Math.random() * 30) + 1 + baselineDay
+  const dayToMonthCheck = () => {
+    if (outboundDay > 30) {
+      baselineMonth += 1
+      outboundDay -= 30
+    }
+  }
+  let outboundMonth = Math.floor(Math.random() * 8) + 1 + baselineDay
+  const monthToYearCheck = () => {
+    if (outboundMonth > 12) {
+      baselineYear += 1
+      outboundMonth -= 12
+    }
+  }
+  const outboundYear = baselineYear
+
+  let n = Math.floor(Math.random() * 6)
+
+  const tripDuration = tripLengthArray[n]
+
+  const inboundDay = tripDuration + outboundDay
+
+  //   const randomDate = () => {
+  //     setOutboundDate(`${outboundYear}-${outboundMonth}-${outboundDay}`)
+  //   }
+
+  //API Request Data Handling
+
   const options = useMemo(
     () => ({
       method: 'GET',
@@ -54,49 +92,7 @@ const BookingData = (props) => {
         const formattedInboundDate = dateConversion(
           Quotes[0].InboundLeg.DepartureDate
         )
-        // const outboundAirlineCheck = () => {
-        //   var i
-        //   for (i = 0; i < Carriers.length; i++) {
-        //     if (Carriers[i].CarrierId === Quotes[0].OutboundLeg.CarrierIds[0]) {
-        //       return Carriers[i].Name
-        //     } else {
-        //       return null
-        //     }
-        //   }
-        // }
 
-        //THIS IS A BETTER WAY TO DO THE ABOVE
-        const outboundAirlineCheck = () => {
-          const carrier = Carriers.filter(
-            (carrier) =>
-              carrier.CarrierId === Quotes[0].OutboundLeg.CarrierIds[0]
-          )[0]
-          if (carrier) return carrier.Name
-          return null
-        }
-
-        // const inboundAirlineCheck = () => {
-        //   var i
-        //   for (i = 0; i < Carriers.length; i++) {
-        //     if (Carriers[i].CarrierId === Quotes[0].InboundLeg.CarrierIds[0]) {
-        //       return Carriers[i].Name
-        //     } else {
-        //       return null
-        //     }
-        //   }
-        // }
-
-        //THIS IS A BETTER WAY TO DO THE ABOVE
-        const inboundAirlineCheck = () => {
-          for (const carrier of Carriers) {
-            if (carrier.CarrierId === Quotes[0].InboundLeg.CarrierIds[0]) {
-              return carrier.Name
-            }
-            return null
-          }
-        }
-
-        //The Best way to actually do either of them
         const airlineCheck = (direction) => {
           if (direction !== 'outbound' && direction !== 'inbound') return
           const {OutboundLeg, InboundLeg} = Quotes[0]
@@ -128,7 +124,6 @@ const BookingData = (props) => {
     getFlightData()
   }, [options])
 
-  console.log('booking data', props)
   return (
     <div className='ticketData'>
       <div className='dataContainerL'>
