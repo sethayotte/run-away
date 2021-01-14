@@ -16,7 +16,7 @@ function debounce(fn, ms) {
   };
 }
 
-const Booking = () => {
+const Booking = ({origin}) => {
   const [dimensions, setDimensions] = useState({
     height: window.innerHeight,
     width: window.innerWidth,
@@ -34,6 +34,7 @@ const Booking = () => {
 
   return (
     <div className="pageContent" id="booking">
+      {console.log(origin)}
       <h1>Pack your bags.</h1>
       {dimensions.width < 1150 ? (
         <TicketVertical />

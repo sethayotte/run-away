@@ -20,10 +20,12 @@ const BookingData = ({origin}) => {
   const [outboundAirline, setOutboundAirline] = useState(null);
   const [inboundAirline, setInboundAirline] = useState(null);
 
+  const requestOutbound = "SFO";
+
   const options = {
     method: "GET",
     url:
-      "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/us/usd/us/" + "den" + "/" + "clt" + "/anytime/anytime",
+      "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/us/usd/us/" + {origin} + "/" + {requestOutbound} + "/anytime/anytime",
     headers: {
       "x-rapidapi-key": process.env.REACT_APP_SKYSCANNER_KEY,
       "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
