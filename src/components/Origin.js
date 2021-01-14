@@ -1,46 +1,47 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, {useState} from 'react'
+import {Link} from 'react-router-dom'
 
 const Origin = ({origin, setOrigin}) => {
+  const handleChange = (event) => {
+    setOrigin(event.target.value.toUpperCase())
+  }
 
-    const handleChange = (event) => {
-        setOrigin(event.target.value.toUpperCase());
-      };
-  
+  console.log('origin', origin)
   return (
-    <div className="pageContent" id="landing">
-      <section className="landingBody">
-        <h1 id="originHeader">What's your departure location?</h1>
-        <p className="inputInstructions">
+    <div className='pageContent' id='landing'>
+      <section className='landingBody'>
+        <h1 id='originHeader'>What's your departure location?</h1>
+        <p className='inputInstructions'>
           PLEASE USE AIRPORT CODE, i.e. CLT for CHARLOTTE
         </p>
         <input
           style={{
-            border: "none",
-            width: "125px",
-            outline: "none",
-            paddingLeft: "10px",
-            borderBottom: "4px solid black",
-            margin: "45px",
-            fontFamily: "Heebo",
-            fontSize: "36pt",
-            fontWeight: "600",
-            textAlign: "center",
-            letterSpacing: "10px",
+            border: 'none',
+            width: '125px',
+            outline: 'none',
+            paddingLeft: '10px',
+            borderBottom: '4px solid black',
+            margin: '45px',
+            fontFamily: 'Heebo',
+            fontSize: '36pt',
+            fontWeight: '600',
+            textAlign: 'center',
+            letterSpacing: '10px',
           }}
-          type="text"
+          type='text'
           value={origin}
           onChange={handleChange}
-          placeholder="CLT"
+          placeholder='CLT'
           maxLength={3}
         />
-        {console.log(origin)}
-        <Link to="/booking">
-          <button className="buttonMain">Next</button>
+        <Link to='/booking'>
+          <button className='buttonMain' disabled={!origin}>
+            Next
+          </button>
         </Link>
       </section>
     </div>
-  );
-};
+  )
+}
 
-export default Origin;
+export default Origin
