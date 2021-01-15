@@ -1,11 +1,21 @@
 #originHeader {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .inputInstructions {
-    font-size: 14pt;
-    font-family: 'IBM Plex Mono';
-    font-weight: 600;
-    font-style: italic;
-    margin: 0px;
+  font-size: 14pt;
+  font-family: 'IBM Plex Mono';
+  font-weight: 600;
+  font-style: italic;
+  margin: 0px;
+}
+
+.errorInstructions {
+  font-size: 12pt;
+  font-family: 'IBM Plex Mono';
+  font-weight: 600;
+  font-style: italic;
+  margin: 0px;
+  margin-bottom: 45px;
+  color: color(error);
 }

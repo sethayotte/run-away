@@ -14,7 +14,7 @@ h1 {
 }
 
 .buttonMain {
-  background-color: #FF9B25;
+  background-color: #ff9b25;
   color: white;
   padding: 10px 55px;
   font-family: 'IBM Plex Mono', monospace;
@@ -26,7 +26,7 @@ h1 {
 }
 
 .buttonSecondary {
-  background-color: #D8D8D8;
+  background-color: #d8d8d8;
   color: white;
   padding: 10px 55px;
   font-family: 'IBM Plex Mono', monospace;
@@ -99,8 +99,8 @@ button:hover {
 
 .dataContainerL h2, .dataContainerR h2 {
   font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
-  color: #EAEAEA;
-  background-color: #FF9B25;
+  color: #eaeaea;
+  background-color: #ff9b25;
   font-weight: 600;
   font-size: 16pt;
   margin-bottom: 0px;
@@ -113,7 +113,7 @@ button:hover {
 
 .dataContainerL h3, .dataContainerR h3 {
   font-family: 'Heebo', sans-serif;
-  color: #FF9B25;
+  color: #ff9b25;
   font-weight: 500;
   font-size: 22pt;
   margin-bottom: 10px;
@@ -188,8 +188,8 @@ button:hover {
   }
   .dataContainerL h2, .dataContainerR h2 {
     font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
-    color: #EAEAEA;
-    background-color: #FF9B25;
+    color: #eaeaea;
+    background-color: #ff9b25;
     font-weight: 600;
     font-size: 14pt;
     margin-bottom: 0px;
@@ -201,7 +201,7 @@ button:hover {
   }
   .dataContainerL h3, .dataContainerR h3 {
     font-family: 'Heebo', sans-serif;
-    color: #FF9B25;
+    color: #ff9b25;
     font-weight: 500;
     font-size: 20pt;
     margin-bottom: 10px;
@@ -245,8 +245,8 @@ button:hover {
 @media only screen and (max-width: 450px) {
   .dataContainerL h2, .dataContainerR h2 {
     font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
-    color: #EAEAEA;
-    background-color: #FF9B25;
+    color: #eaeaea;
+    background-color: #ff9b25;
     font-weight: 600;
     font-size: 12pt;
     margin-bottom: 0px;
@@ -258,7 +258,7 @@ button:hover {
   }
   .dataContainerL h3, .dataContainerR h3 {
     font-family: 'Heebo', sans-serif;
-    color: #FF9B25;
+    color: #ff9b25;
     font-weight: 500;
     font-size: 18pt;
     margin-bottom: 7px;
@@ -412,8 +412,18 @@ button:hover {
   margin: 0px;
 }
 
+.errorInstructions {
+  font-size: 12pt;
+  font-family: 'IBM Plex Mono';
+  font-weight: 600;
+  font-style: italic;
+  margin: 0px;
+  margin-bottom: 45px;
+  color: #fb0d0d;
+}
+
 .confirmationIcon {
-  color: #FF9B25;
+  color: #ff9b25;
   margin-bottom: 10px;
 }
 

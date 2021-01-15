@@ -1,11 +1,12 @@
 $colors: (
-    black: black,
-    white: white,
-    orange: #FF9B25,
-    grey: #D8D8D8,
-    ticket: #EAEAEA,
+  black: black,
+  white: white,
+  orange: #ff9b25,
+  grey: #d8d8d8,
+  ticket: #eaeaea,
+  error: #fb0d0d,
 );
 
 @function color($color-name) {
-    @return map-get($colors, $color-name)
+  @return map-get($colors, $color-name);
 }
