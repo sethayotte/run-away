@@ -228,7 +228,7 @@ const BookingData = (props) => {
   const options = useMemo(
     () => ({
       method: 'GET',
-      url: `https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/us/usd/us/${origin}/${requestOutbound}/anytime/anytime`,
+      url: `https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/us/usd/us/${origin}/${requestOutbound}/${randomOutboundDate}/${randomInboundDate}`,
       headers: {
         'x-rapidapi-key': process.env.REACT_APP_SKYSCANNER_KEY,
         'x-rapidapi-host':
@@ -295,6 +295,70 @@ const BookingData = (props) => {
     getFlightData()
   }, [options])
 
+  const originSkeletonCheck = () => {
+    if (
+      originCode != null &&
+      setOriginCityName != null &&
+      originCountryName != null
+    ) {
+      return `(${originCode}) ${originCityName}, ${originCountryName}`
+    } else {
+      return <Skeleton />
+    }
+  }
+
+  const destinationSkeletonCheck = () => {
+    if (
+      destinationCode != null &&
+      destinationCityName != null &&
+      destinationCountryName != null
+    ) {
+      return `(${destinationCode}) ${destinationCityName}, ${destinationCountryName}`
+    } else {
+      return <Skeleton />
+    }
+  }
+
+  const datesSkeletonCheck = () => {
+    if (outboundDate !== '0000.00.00' && inboundDate !== '0000.00.00') {
+      return `${outboundDate} - ${inboundDate}`
+    } else {
+      return <Skeleton />
+    }
+  }
+
+  const itineraryOBSkeletonCheck = () => {
+    if (
+      outboundAirline != null &&
+      inboundAirline != null &&
+      routeStatus != null
+    ) {
+      return ` ${outboundAirline}, ${routeStatus}`
+    } else {
+      return <Skeleton width={200} />
+    }
+  }
+
+  const itineraryIBSkeletonCheck = () => {
+    if (
+      outboundAirline != null &&
+      inboundAirline != null &&
+      routeStatus != null
+    ) {
+      return ` ${inboundAirline}, ${routeStatus}`
+    } else {
+      return <Skeleton width={200} />
+    }
+  }
+
+  const fareSkeletonCheck = () => {
+    if (fare != null) {
+      return `${fare}`
+    } else {
+      return <Skeleton width={85} />
+    }
+  }
+
   return (
     <div className='ticketData'>
       <div className='dataContainerL'>
@@ -304,11 +368,7 @@ const BookingData = (props) => {
             <h3>Origin</h3>
           </div>
           <div className='sectionContent'>
-            <p>
-              {`(${originCode}) ${originCityName}, ${originCountryName}` || (
-                <Skeleton />
-              )}
-            </p>
+            <p>{originSkeletonCheck()}</p>
           </div>
         </div>
         <div className='sectionContainer'>
@@ -317,11 +377,7 @@ const BookingData = (props) => {
             <h3>Destination</h3>
           </div>
           <div className='sectionContent'>
-            <p>
-              {`(${destinationCode}) ${destinationCityName}, ${destinationCountryName}` || (
-                <Skeleton />
-              )}
-            </p>
+            <p>{destinationSkeletonCheck()}</p>
           </div>
         </div>
         <div className='sectionContainer'>
@@ -330,7 +386,7 @@ const BookingData = (props) => {
             <h3>Dates</h3>
           </div>
           <div className='sectionContent'>
-            <p>{`${outboundDate} - ${inboundDate}` || <Skeleton />}</p>
+            <p>{datesSkeletonCheck()}</p>
           </div>
         </div>
       </div>
@@ -343,11 +399,11 @@ const BookingData = (props) => {
           <div className='sectionContent'>
             <p className='itineraryFirstChild'>
               <Icon size={24} icon={ic_flight_takeoff} />
-              {` ${outboundAirline}, ${routeStatus}`}
+              {itineraryOBSkeletonCheck()}
             </p>
             <p className='itinerarySecondChild'>
               <Icon size={24} icon={ic_flight_land} />
-              {` ${inboundAirline}, ${routeStatus}`}
+              {itineraryIBSkeletonCheck()}
             </p>
           </div>
         </div>
@@ -359,7 +415,7 @@ const BookingData = (props) => {
           <div className='sectionContent'>
             <p>As low as:</p>
             <p id='farePrice'>
-              {`$${fare}` || <Skeleton />}
+              ${fareSkeletonCheck()}
               <span id='currencyType'>usd</span>
             </p>
           </div>
