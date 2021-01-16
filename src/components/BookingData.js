@@ -632,13 +632,14 @@ const BookingData = (props) => {
     let outboundMonth
     let outboundYear
     let outboundDay
+    let randomOutboundDate
 
     console.log('baselineDay', baselineDay)
     console.log('baselineMonth', baselineMonth)
     console.log('baselineYear', baselineYear)
 
     const outboundDayGen = () => {
-      let outboundDay = Math.floor(Math.random() * 30) + 1 + baselineDay
+      outboundDay = Math.floor(Math.random() * 30) + 1 + baselineDay
       console.log('outboundDay', outboundDay)
       if (outboundDay > 30) {
         baselineMonth = baselineMonth + 1
@@ -662,20 +663,30 @@ const BookingData = (props) => {
     console.log('outboundMonth convert', outboundMonth)
 
     outboundYear = baselineYear
-    setOutboundDate(`${outboundYear}-${outboundMonth}-${outboundDay}`)
-    console.log(outboundDate)
+
+    if (outboundMonth < 10) {
+      outboundMonth = `0${outboundMonth}`
+    }
+
+    if (outboundDay < 10) {
+      outboundDay = `0${outboundDay}`
+    }
+
+    randomOutboundDate = `${outboundYear}-${outboundMonth}-${outboundDay}`
+    console.log(randomOutboundDate)
 
     //Inbound Data Setup
     const tripLengthArray = [4, 7, 10, 14, 18, 21]
     const n = Math.floor(Math.random() * 6)
     const tripDuration = tripLengthArray[n]
-    let inboundMonth = outboundMonth
+    let inboundMonth = Number(outboundMonth)
     let inboundYear = outboundYear
+    let randomInboundDate
 
     console.log(outboundDay)
     console.log('tripDuration', tripDuration)
-    let inboundDay = tripDuration + outboundDay
-    console.log(inboundDay)
+    let inboundDay = tripDuration + +outboundDay
+    console.log('inbound day', inboundDay)
     const inboundMonthCheck = () => {
       if (inboundDay > 30) {
         inboundMonth += 1
@@ -690,8 +701,20 @@ const BookingData = (props) => {
       }
     }
     inboundYearCheck()
-    setInboundDate(`${inboundYear}-${inboundMonth}-${inboundDay}`)
+
+    if (inboundMonth < 10) {
+      inboundMonth = `0${inboundMonth}`
+    }
+
+    if (inboundDay < 10) {
+      inboundDay = `0${inboundDay}`
+    }
+    randomInboundDate = `${inboundYear}-${inboundMonth}-${inboundDay}`
+    console.log('randomInboundDate', randomInboundDate)
+    return [randomOutboundDate, randomInboundDate]
   }
+
+  const [randomOutboundDate, randomInboundDate] = generateTravelDates()
 
   //API Request Data Handling
 
@@ -719,14 +742,14 @@ const BookingData = (props) => {
   useEffect(() => {
     const getFlightData = async () => {
       const flightData = await (await axios.request(options))?.data
-      if (flightData) {
+      if (flightData.Quotes.length > 0) {
         const {Places, Quotes, Carriers} = flightData
-        // const formattedOutboundDate = dateConversion(
-        //   Quotes[0].OutboundLeg.DepartureDate
-        // )
-        // const formattedInboundDate = dateConversion(
-        //   Quotes[0].InboundLeg.DepartureDate
-        // )
+        const formattedOutboundDate = dateConversion(
+          Quotes[0].OutboundLeg.DepartureDate
+        )
+        const formattedInboundDate = dateConversion(
+          Quotes[0].InboundLeg.DepartureDate
+        )
 
         const airlineCheck = (direction) => {
           if (direction !== 'outbound' && direction !== 'inbound') return
@@ -748,15 +771,18 @@ const BookingData = (props) => {
         setDestinationCountryName(Places[1].CountryName)
         setOriginCityName(Places[0].CityName)
         setOriginCountryName(Places[0].CountryName)
-        // setOutboundDate(formattedOutboundDate)
-        // setInboundDate(formattedInboundDate)
+        setOutboundDate(formattedOutboundDate)
+        setInboundDate(formattedInboundDate)
         setOutboundAirline(outAirline)
         setInboundAirline(inAirline)
         setFare(Quotes[0].MinPrice)
+      } else {
+        alert('No route found')
       }
     }
 
     generateTravelDates()
+    console.log(requestOutbound)
 
     getFlightData()
   }, [options])
