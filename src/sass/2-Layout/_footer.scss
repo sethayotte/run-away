@@ -1,0 +1,42 @@
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  .helpLink {
+    display: flex;
+    margin-left: auto;
+    padding: 15px;
+
+    .helpIcon {
+      color: color(darkGrey);
+    }
+  }
+}
+
+.aboutModalControls {
+  .closeIcon {
+    color: color(orange);
+  }
+  float: right;
+}
+
+.aboutCopy {
+  margin-top: 40px;
+  .aboutHeader {
+    font-size: 28pt;
+    text-align: center;
+  }
+  .aboutBody {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    margin: 0px 25px;
+    text-align: left;
+  }
+  .bodyIcon {
+    color: color(orange);
+    display: flex;
+    margin-left: 45%;
+  }
+}

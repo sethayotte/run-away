@@ -1,15 +1,19 @@
 .mainMenu {
-    width: 100vw;
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(#ffffff, #ffffff01);
 
-    .homeLink {
-        display: flex;
+  .homeLink {
+    display: flex;
 
-        img {
-            height: 50px;
-            margin: auto;
-            padding: 20px;
-        }
-
+    img {
+      height: 50px;
+      margin: auto;
+      padding: 20px;
     }
-
+  }
 }

@@ -41,8 +41,69 @@ button:hover {
   cursor: pointer;
 }
 
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer .helpLink {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+  padding: 15px;
+}
+
+.footer .helpLink .helpIcon {
+  color: #CECECE;
+}
+
+.aboutModalControls {
+  float: right;
+}
+
+.aboutModalControls .closeIcon {
+  color: #ff9b25;
+}
+
+.aboutCopy {
+  margin-top: 40px;
+}
+
+.aboutCopy .aboutHeader {
+  font-size: 28pt;
+  text-align: center;
+}
+
+.aboutCopy .aboutBody {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
+  margin: 0px 25px;
+  text-align: left;
+}
+
+.aboutCopy .bodyIcon {
+  color: #ff9b25;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 45%;
+}
+
 .mainMenu {
   width: 100vw;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 150px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff01));
+  background: linear-gradient(#ffffff, #ffffff01);
 }
 
 .mainMenu .homeLink {
@@ -323,6 +384,10 @@ button:hover {
   }
 }
 
+#booking {
+  margin-top: 100px;
+}
+
 #booking .data {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -421,7 +486,7 @@ button:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 70vh;
+  height: 90vh;
 }
 
 #originHeader {

@@ -3,6 +3,7 @@ import './sass/App.scss'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 import Menu from './components/Menu'
+import Footer from './components/Footer'
 import Landing from './components/Landing'
 import Origin from './components/Origin'
 import Booking from './components/Booking'
@@ -16,6 +17,7 @@ function App() {
     <Router>
       <div className='App'>
         <Menu />
+        <Footer />
       </div>
 
       <Switch>
