@@ -1,7 +1,7 @@
 {
   "name": "run-away",
   "version": "0.1.0",
-  "homepage": "http://sethayotte.github.io/run-away",
+  "homepage": "https://run-away.app/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
