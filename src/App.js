@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import './sass/App.scss'
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {HashRouter as Router, Switch, Route} from 'react-router-dom'
 
 import Menu from './components/Menu'
 import Footer from './components/Footer'

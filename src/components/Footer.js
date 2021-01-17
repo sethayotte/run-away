@@ -1,5 +1,4 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
 import Modal from 'react-modal'
 
 import {Icon} from 'react-icons-kit'
