@@ -21,6 +21,9 @@ function App() {
       </div>
 
       <Switch>
+        <Route path='/landing'>
+          <Landing />
+        </Route>
         <Route path='/origin'>
           <Origin origin={origin} setOrigin={setOrigin} />
         </Route>
