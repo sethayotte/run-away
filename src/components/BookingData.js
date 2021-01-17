@@ -236,7 +236,6 @@ const BookingData = (props) => {
     const getFlightData = async () => {
       //   const requestStatus = response.status
       const flightData = await (await axios.request(options))?.data
-      console.log('request status', options.status)
       let i = 0
       if (flightData.Quotes.length > 0 || i < 15) {
         const {Places, Quotes, Carriers} = flightData
