@@ -32,7 +32,6 @@ const Booking = ({origin}) => {
     window.addEventListener('resize', debouncedHandleResize)
   })
 
-  //console.log(origin)
   return (
     <div className='pageContent' id='booking'>
       <h1>Pack your bags.</h1>
@@ -54,7 +53,7 @@ const Booking = ({origin}) => {
         <Link to='/confirmation'>
           <button className='buttonMain'>Book Now</button>
         </Link>
-        <Link to='/booking'>
+        <Link to='/origin'>
           <button className='buttonSecondary'>Try Again</button>
         </Link>
       </div>

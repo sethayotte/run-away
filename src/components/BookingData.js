@@ -141,24 +141,17 @@ const BookingData = (props) => {
     let outboundDay
     let randomOutboundDate
 
-    console.log('baselineDay', baselineDay)
-    console.log('baselineMonth', baselineMonth)
-    console.log('baselineYear', baselineYear)
-
     const outboundDayGen = () => {
       outboundDay = Math.floor(Math.random() * 30) + 1 + baselineDay
-      console.log('outboundDay', outboundDay)
       if (outboundDay > 30) {
         baselineMonth = baselineMonth + 1
         outboundDay = outboundDay - 30
       }
     }
     outboundDayGen()
-    console.log('outboundDay convert', outboundDay)
 
     const outboundMonthGen = () => {
       outboundMonth = Math.floor(Math.random() * 8) + 1 + baselineMonth
-      console.log('outboundMonth', outboundMonth)
       if (outboundMonth > 12) {
         baselineYear = baselineYear + 1
         outboundMonth = outboundMonth - 12
@@ -166,8 +159,6 @@ const BookingData = (props) => {
     }
 
     outboundMonthGen()
-
-    console.log('outboundMonth convert', outboundMonth)
 
     outboundYear = baselineYear
 
@@ -180,7 +171,6 @@ const BookingData = (props) => {
     }
 
     randomOutboundDate = `${outboundYear}-${outboundMonth}-${outboundDay}`
-    console.log(randomOutboundDate)
 
     //Inbound Data Setup
     const tripLengthArray = [4, 7, 10, 14, 18, 21]
@@ -190,10 +180,7 @@ const BookingData = (props) => {
     let inboundYear = outboundYear
     let randomInboundDate
 
-    console.log(outboundDay)
-    console.log('tripDuration', tripDuration)
     let inboundDay = tripDuration + +outboundDay
-    console.log('inbound day', inboundDay)
     const inboundMonthCheck = () => {
       if (inboundDay > 30) {
         inboundMonth += 1
@@ -217,7 +204,6 @@ const BookingData = (props) => {
       inboundDay = `0${inboundDay}`
     }
     randomInboundDate = `${inboundYear}-${inboundMonth}-${inboundDay}`
-    console.log('randomInboundDate', randomInboundDate)
     return [randomOutboundDate, randomInboundDate]
   }
 
@@ -228,7 +214,7 @@ const BookingData = (props) => {
   const options = useMemo(
     () => ({
       method: 'GET',
-      url: `https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/us/usd/us/${origin}/${requestOutbound}/${randomOutboundDate}/${randomInboundDate}`,
+      url: `https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/us/usd/us/${origin}/${requestOutbound}/anytime/anytime`,
       headers: {
         'x-rapidapi-key': process.env.REACT_APP_SKYSCANNER_KEY,
         'x-rapidapi-host':
@@ -248,8 +234,11 @@ const BookingData = (props) => {
 
   useEffect(() => {
     const getFlightData = async () => {
+      //   const requestStatus = response.status
       const flightData = await (await axios.request(options))?.data
-      if (flightData.Quotes.length > 0) {
+      console.log('request status', options.status)
+      let i = 0
+      if (flightData.Quotes.length > 0 || i < 15) {
         const {Places, Quotes, Carriers} = flightData
         const formattedOutboundDate = dateConversion(
           Quotes[0].OutboundLeg.DepartureDate
@@ -285,12 +274,13 @@ const BookingData = (props) => {
         setFare(Quotes[0].MinPrice)
         setRouteStatus(Quotes[0].Direct ? 'direct' : 'indirect')
       } else {
-        alert('No route found')
+        getFlightData()
+        i++
+        console.log('attempt number', i)
       }
     }
 
     generateTravelDates()
-    console.log(requestOutbound)
 
     getFlightData()
   }, [options])

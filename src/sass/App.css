@@ -83,11 +83,12 @@ button:hover {
   display: flex;
 }
 
-.ticketData .dataContainerL {
-  padding-right: 50px;
+.ticketData .dataContainerR {
+  padding-left: 50px;
 }
 
-.dataContainerL, .dataContainerR {
+.dataContainerL,
+.dataContainerR {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -95,10 +96,12 @@ button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  max-width: 400px;
 }
 
-.dataContainerL h2, .dataContainerR h2 {
-  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+.dataContainerL h2,
+.dataContainerR h2 {
+  font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
   color: #eaeaea;
   background-color: #ff9b25;
   font-weight: 600;
@@ -111,7 +114,8 @@ button:hover {
   line-height: 165%;
 }
 
-.dataContainerL h3, .dataContainerR h3 {
+.dataContainerL h3,
+.dataContainerR h3 {
   font-family: 'Heebo', sans-serif;
   color: #ff9b25;
   font-weight: 500;
@@ -119,22 +123,26 @@ button:hover {
   margin-bottom: 10px;
 }
 
-.dataContainerL p, .dataContainerR p {
+.dataContainerL p,
+.dataContainerR p {
   font-family: 'IBM Plex Mono', monospace;
   color: black;
   font-weight: 400;
   font-size: 14pt;
 }
 
-.dataContainerL .itineraryFirstChild, .dataContainerR .itineraryFirstChild {
+.dataContainerL .itineraryFirstChild,
+.dataContainerR .itineraryFirstChild {
   margin-bottom: 5px;
 }
 
-.dataContainerL .itinerarySecondChild, .dataContainerR .itinerarySecondChild {
+.dataContainerL .itinerarySecondChild,
+.dataContainerR .itinerarySecondChild {
   margin-top: 0px;
 }
 
-.dataContainerL #farePrice, .dataContainerR #farePrice {
+.dataContainerL #farePrice,
+.dataContainerR #farePrice {
   margin-top: -20px;
   padding-top: 0px;
   font-weight: 700;
@@ -142,7 +150,8 @@ button:hover {
   font-style: italic;
 }
 
-.dataContainerL #farePrice #currencyType, .dataContainerR #farePrice #currencyType {
+.dataContainerL #farePrice #currencyType,
+.dataContainerR #farePrice #currencyType {
   font-size: 18pt;
 }
 
@@ -174,10 +183,11 @@ button:hover {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .ticketData .dataContainerL {
-    padding-right: 0px;
+  .ticketData .dataContainerR {
+    padding-left: 0px;
   }
-  .dataContainerL, .dataContainerR {
+  .dataContainerL,
+  .dataContainerR {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -186,8 +196,9 @@ button:hover {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .dataContainerL h2, .dataContainerR h2 {
-    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+  .dataContainerL h2,
+  .dataContainerR h2 {
+    font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
     color: #eaeaea;
     background-color: #ff9b25;
     font-weight: 600;
@@ -199,27 +210,31 @@ button:hover {
     text-align: center;
     line-height: 185%;
   }
-  .dataContainerL h3, .dataContainerR h3 {
+  .dataContainerL h3,
+  .dataContainerR h3 {
     font-family: 'Heebo', sans-serif;
     color: #ff9b25;
     font-weight: 500;
     font-size: 20pt;
     margin-bottom: 10px;
   }
-  .dataContainerL p, .dataContainerR p {
+  .dataContainerL p,
+  .dataContainerR p {
     font-family: 'IBM Plex Mono', monospace;
     color: black;
     font-weight: 400;
     font-size: 12pt;
   }
-  .dataContainerL #farePrice, .dataContainerR #farePrice {
+  .dataContainerL #farePrice,
+  .dataContainerR #farePrice {
     margin-top: -20px;
     padding-top: 0px;
     font-weight: 700;
     font-size: 36pt;
     font-style: italic;
   }
-  .dataContainerL #farePrice #currencyType, .dataContainerR #farePrice #currencyType {
+  .dataContainerL #farePrice #currencyType,
+  .dataContainerR #farePrice #currencyType {
     font-size: 18pt;
   }
   .sectionContainer {
@@ -243,8 +258,13 @@ button:hover {
 }
 
 @media only screen and (max-width: 450px) {
-  .dataContainerL h2, .dataContainerR h2 {
-    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+  .dataContainerL,
+  .dataContainerR {
+    max-width: 280px;
+  }
+  .dataContainerL h2,
+  .dataContainerR h2 {
+    font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
     color: #eaeaea;
     background-color: #ff9b25;
     font-weight: 600;
@@ -256,27 +276,31 @@ button:hover {
     text-align: center;
     line-height: 190%;
   }
-  .dataContainerL h3, .dataContainerR h3 {
+  .dataContainerL h3,
+  .dataContainerR h3 {
     font-family: 'Heebo', sans-serif;
     color: #ff9b25;
     font-weight: 500;
     font-size: 18pt;
     margin-bottom: 7px;
   }
-  .dataContainerL p, .dataContainerR p {
+  .dataContainerL p,
+  .dataContainerR p {
     font-family: 'IBM Plex Mono', monospace;
     color: black;
     font-weight: 400;
     font-size: 10pt;
   }
-  .dataContainerL #farePrice, .dataContainerR #farePrice {
+  .dataContainerL #farePrice,
+  .dataContainerR #farePrice {
     margin-top: -20px;
     padding-top: 0px;
     font-weight: 700;
     font-size: 36pt;
     font-style: italic;
   }
-  .dataContainerL #farePrice #currencyType, .dataContainerR #farePrice #currencyType {
+  .dataContainerL #farePrice #currencyType,
+  .dataContainerR #farePrice #currencyType {
     font-size: 18pt;
   }
   .sectionContainer {
@@ -429,5 +453,21 @@ button:hover {
 
 .confirmationHeader {
   margin: 0px;
+}
+
+.inputInstructions {
+  text-align: center;
+  max-width: 600px;
+  padding: 25px;
+  padding-top: 10px;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#searchLink {
+  color: #ff9b25;
 }
 /*# sourceMappingURL=App.css.map */

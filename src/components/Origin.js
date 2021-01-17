@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 
 const validationDataset = [
@@ -175,6 +175,10 @@ const validationDataset = [
 ]
 
 const Origin = ({origin, setOrigin}) => {
+  useEffect(() => {
+    setOrigin('')
+  }, [])
+
   const handleChange = (event) => {
     setOrigin(event.target.value.toUpperCase())
   }
@@ -195,7 +199,6 @@ const Origin = ({origin, setOrigin}) => {
             paddingLeft: '10px',
             borderBottom: '4px solid black',
             margin: '45px',
-            marginBottom: '10px',
             fontFamily: 'Heebo',
             fontSize: '36pt',
             fontWeight: '600',
@@ -208,7 +211,7 @@ const Origin = ({origin, setOrigin}) => {
           placeholder='CLT'
           maxLength={3}
         />
-        <p className='errorInstructions'>PLEASE USE VALID U.S. AIRPORT</p>
+        {/* <p className='errorInstructions'>PLEASE USE VALID U.S. AIRPORT</p> */}
         <Link to='/booking'>
           <button className='buttonMain' disabled={!origin}>
             Next

@@ -1,8 +1,23 @@
 .confirmationIcon {
-    color: color(orange);
-    margin-bottom: 10px;
+  color: color(orange);
+  margin-bottom: 10px;
 }
 
 .confirmationHeader {
-    margin: 0px;
+  margin: 0px;
+}
+
+.inputInstructions {
+  text-align: center;
+  max-width: 600px;
+  padding: 25px;
+  padding-top: 10px;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+#searchLink {
+  color: color(orange);
 }
