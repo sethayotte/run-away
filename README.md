@@ -17,9 +17,10 @@ Once a user enters in their departure point, our algorithm will generate a rando
 ### *Flexible Ticket UI*
 <p>
 Design was a large focus of this project. This tool had to be simple to navigate and get straight to the point. With all of the data we’d be pulling from the API response, we ensured that it was packaged neatly into an inviting ticket interface.
+  </p>
 
 <img height="400" src="https://sethmitchell.dev/static/media/RunAway_ProjectTiles-01.5cfd934f.png">
-</p>
+
 
 ### *Random Date Generation*
 <p>
